@@ -1,0 +1,20 @@
+// @media only screen and (min-width: 992px)
+// #mainNav {
+//     border-bottom: 1px solid transparent;
+//     background: transparent;
+// }
+#mainNav {
+  position: absolute;
+  border-bottom: 1px solid #e9ecef;
+  background-color: white;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 50px;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}

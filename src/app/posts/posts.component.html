@@ -1,0 +1,41 @@
+<div class="postList">
+    <h1>Posts List Component</h1>
+    <button class="btn btn-primary ml-1" routerLink="/addPost">addPost</button>
+    <br>
+        <hr>
+            <div *ngIf="userToPost.length>0">
+                <div class="container">
+                    <div
+                        class="row post-item mt-1"
+                        *ngFor="let post of posts; let i = index;index as y"
+                        [(ngModel)]="userToPost"
+                        ngDefaultControl>
+                        <div class="col-sm-3">
+
+                            Post #{{y+1}}
+                            <hr>
+                                by
+                                {{userToPost[i]?.first_name}}
+                                {{userToPost[i]?.last_name}}
+                                <hr>
+                                    ({{userToPost[i]?.email}})
+
+                                </div>
+                                <div class="col-sm-9">
+                                    <span class="post-title">
+                                        {{post.title}}</span>
+                                    <br>
+                                        <span class="post-body">
+                                            {{post.body}}</span>
+                                        <div>
+                                            <hr>
+                                                <app-comments [postId]="post.id"></app-comments>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ng-template #loadingPage>
+                                <app-loading-page></app-loading-page>
+                            </ng-template>

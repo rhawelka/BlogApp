@@ -1,0 +1,19 @@
+<button type="button" class="btn btn-primary" (click)="showComments()">See comments</button>
+<div *ngIf="showCommentsToUser">
+    <div *ngIf="commentsToPost.length > 0; else noComments">
+        <div *ngFor="let comment of commentsToPost; let i = index" class="ml-5">
+            <span class="comment-title">{{comment.name}}</span>
+            <br>
+                <span style="font-size: 13px">By:</span>
+                <span class="comment-author">{{comment.email}}</span>
+                <br>
+                    <span class="comment-body">{{comment.body}}</span>
+                    <hr></div>
+                </div>
+                <div class="ml-5">
+                    <app-add-comment [postId]="postId"></app-add-comment>
+                </div>
+            </div>
+            <ng-template #noComments>
+                Write first comment bro!
+            </ng-template>

@@ -1,0 +1,29 @@
+
+<div class="add-post">
+    <h2>Add Post</h2>
+    <div class="input-group input-group-lg mt-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Title</span>
+        </div>
+        <input
+            [(ngModel)]="postTitle"
+            placeholder="post title"
+            type="text"
+            class="form-control"
+            aria-label="Large"
+            aria-describedby="inputGroup-sizing-sm"></div>
+            <div class="input-group input-group-lg mt-1">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-lg">Content</span>
+                </div>
+                <input
+                    [(ngModel)]="postBody"
+                    placeholder="post content"
+                    type="text"
+                    class="form-control"
+                    aria-label="Large"
+                    aria-describedby="inputGroup-sizing-sm"></div>
+                    <br>
+            <button (click)="addPost()" class="btn btn-primary">Add post</button>
+        </div>
+        <hr>

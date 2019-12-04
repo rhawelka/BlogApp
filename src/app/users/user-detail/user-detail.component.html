@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div *ngIf="user">
+                <div class="card user-details">
+                    <div class="card-body">
+                      <h4 class="card-title">Profile</h4>
+                      <img src={{user._links.avatar.href}} alt="">
+                      <p class="card-text">First Name:
+                          {{user.first_name}}</p>
+
+                      <p class="card-text">Last Name:
+                          {{user.last_name}}</p>
+
+                      <p class="card-text">email:
+                          {{user.email}}</p>
+
+                      <p class="card-text">phone:
+                          {{user.phone}}</p>
+
+                          <p>gender:
+                              {{user.gender}}</p>
+
+                      <p class="card-text">address:
+                          {{user.address}}</p>
+                          <button class="btn btn-primary" routerLink="/users">Back</button>
+                    </div>
+
+                  </div>
+              </div>
+        </div>
+        <div class="col-sm-8">
+          <app-add-post [userId]="userId"></app-add-post>
+          <app-user-all-posts-list [userPosts]="userPosts"></app-user-all-posts-list>
+        </div>
+    </div>
+</div>
+
+
+

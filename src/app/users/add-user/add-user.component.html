@@ -1,0 +1,86 @@
+<div class="add-user">
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <div class="input-group input-group-lg mt-1">
+            <div class="input-group-prepend">
+                <label for="first_name" class="input-group-text">First name</label>
+            </div>
+            <input
+                id="first_name"
+                [(ngModel)]=" user.first_name"
+                name="first_name"
+                #first_name="ngModel"
+                placeholder="first name"
+                type="text"
+                class="form-control"
+                aria-describedby="firstNameHelp"
+                required></div>
+            <div class="input-group input-group-lg mt-1">
+                <div class="input-group-prepend">
+                    <label for="last_name" class="input-group-text">Last name</label>
+                </div>
+                <input
+                    id="last_name"
+                    name="last_name"
+                    [(ngModel)]=" user.last_name"
+                    #last_name="ngModel"
+                    placeholder="last name"
+                    type="text"
+                    class="form-control"
+                    aria-describedby="lastNameHelp"
+                    required></div>
+                <div class="input-group input-group-lg mt-1">
+                    <div class="input-group-prepend">
+                        <label for="email" class="input-group-text">Email</label>
+                    </div>
+                    <input
+                        id="email"
+                        name="email"
+                        [(ngModel)]=" user.email"
+                        #email="ngModel"
+                        type="email"
+                        placeholder="email"
+                        email
+                        class="form-control"
+                        aria-describedby="emailHelp"
+                        required></div>
+                    <div class="input-group input-group-lg mt-1">
+                        <div class="input-group-prepend">
+                            <label for="phone" class="input-group-text">Phone</label>
+                        </div>
+                        <input
+                            id="phone"
+                            name="phone"
+                            #phone="ngModel"
+                            [(ngModel)]=" user.phone"
+                            placeholder="phone"
+                            type="text"
+                            class="form-control"
+                            aria-describedby="inputGroup-sizing-sm"
+                            required></div>
+                        <div class="input-group input-group-lg mt-1">
+                            <div class="input-group-prepend">
+                                <label for="address" class="input-group-text">Address</label>
+                            </div>
+                            <textarea
+                                id="address"
+                                name="address"
+                                [(ngModel)]=" user.address"
+                                #address="ngModel"
+                                placeholder="address"
+                                type="text"
+                                class="form-control"
+                                aria-describedby="inputGroup-sizing-sm"
+                                required></textarea></div>
+                            <div class="input-group input-group-lg mt-1">
+                                <div class="input-group-prepend">
+                                    <label for="gender" class="input-group-text">Gender</label>
+                                </div>
+                                <select name="gender" id="gender" [(ngModel)]=" user.gender">
+                                    <option *ngFor="let gen of gender" [value]="gen">{{gen}}</option>
+                                  </select>
+                                </div>
+                                <button class="btn btn-primary mr-1" routerLink="/users">Cancel</button>
+                                <button class="btn btn-primary" [disabled]="!contactForm.valid">Save</button>
+                                <button type="reset" class="btn btn-primary" (click)="resetForm()">Reset</button>
+                            </form>
+                            <br></div>
