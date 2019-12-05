@@ -1,33 +1,25 @@
-.masthead{
-  margin-bottom: 50px;
+.header{
+    min-height: 45vh;
+    margin-bottom: 50px;
     background: no-repeat center center;
-    background-image: url("../../assets/acoustic-amplifier-artist-audio-114820.jpg");
+    background-image: url("https://images.pexels.com/photos/712786/pexels-photo-712786.jpeg");
     background-attachment: scroll;
     position: relative;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover
-}
+    background-size: cover;
+    color: white;
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #212529;
-  opacity: 0.5
-}
+    .container{
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
 
-.page-heading,header.masthead .post-heading,header.masthead .site-heading {
-  padding: 200px 0 150px;
-  color: white}
-
-  .container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+      .page-heading{
+        margin-top: 20vh;
+      }
+    }
 }

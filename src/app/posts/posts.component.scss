@@ -1,6 +1,6 @@
-.postList{
-  margin-top: 50px;
+.post-list{
   min-height: 100vh;
+  margin-top: 60px;
 }
 .post-item{
   padding: 20px;
@@ -15,14 +15,6 @@
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-
-  .post-title{
-    font-size: 20px;
-  }
-
-  .post-body{
-    font-size: 14px;
-  }
 }
 
 @keyframes fadein {

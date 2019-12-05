@@ -20,12 +20,12 @@ contactForm: NgForm;
   constructor(private _userService: UserService) {
    }
 
-  onSubmit(){
+  onSubmit() {
     this.addUser(this.user);
     this.resetForm();
   }
 
-  resetForm(){
+  resetForm() {
     this.user= new User();
     this.contactForm.reset();
   }

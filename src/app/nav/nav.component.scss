@@ -1,14 +1,13 @@
-// @media only screen and (min-width: 992px)
-// #mainNav {
-//     border-bottom: 1px solid transparent;
-//     background: transparent;
-// }
 #mainNav {
   position: absolute;
   border-bottom: 1px solid #e9ecef;
-  background-color: white;
+  background-color: black;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-bottom: 50px;
+
+  .nav-link{
+    color:white;
+  }
 }
 
 .fixed-top {

@@ -1,4 +1,4 @@
-<button class="btn  btn-secondary" (click)="showCommentComponent()">Add comment</button>
+<button class="btnBlack" (click)="showCommentComponent()">Add comment</button>
 <div *ngIf="showComponent">
     <div *ngIf="postId" class="CreateCommenttoPost#1" ngDefaultControl>
         <h5>Add comment to post #{{postId}}</h5>
@@ -26,6 +26,7 @@
                         type="text"
                         name="email"
                         id="email"
+                        email
                         placeholder="email"
                         [(ngModel)]="comment.email"
                         #email="ngModel"
@@ -35,22 +36,22 @@
                         required></div>
                     <div class="input-group input-group-sm mb-3">
                         <div class="input-group-prepend">
-                            <label for="commentBody" class="input-group-text">Comment</label>
+                            <label for="body" class="input-group-text">Comment</label>
                         </div>
                         <input
-                            id="commentBody"
-                            name="commentBody"
+                            id="body"
+                            name="body"
                             #commentBody="ngModel"
                             type="text"
                             placeholder="comment"
-                            [(ngModel)]="comment.commentBody"
+                            [(ngModel)]="comment.body"
                             class="form-control"
                             aria-label="Small"
                             aria-describedby="commentBody"
                             required></div>
 
-                        <button type="submit" class="btn btn-primary">Post Comment</button>
-                        <button type="reset" class="btn btn-primary" (click)="resetForm()">Reset</button>
+                        <button type="submit" class="btnBlack">Post Comment</button>
+                        <button type="reset" class="btnBlack" (click)="resetForm()">Reset</button>
                     </form>
                 </div>
             </div>

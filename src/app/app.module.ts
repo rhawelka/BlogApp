@@ -24,7 +24,6 @@ import { PostsListComponent } from './posts/posts-list/posts-list.component';
 import { CommentElemComponent } from './comments/comment-elem/comment-elem.component';
 import { AddCommentComponent } from './comments/add-comment/add-comment.component';
 import { UserAllPostsListComponent } from './users/user-all-posts-list/user-all-posts-list.component';
-import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { LoadingPageComponent } from './loading-page/loading-page.component';
 import { LoadingIconComponent } from './loading-page/loading-icon/loading-icon.component';
 
@@ -48,7 +47,6 @@ import { LoadingIconComponent } from './loading-page/loading-icon/loading-icon.c
     CommentElemComponent,
     AddCommentComponent,
     UserAllPostsListComponent,
-    TemplateDrivenComponent,
     LoadingPageComponent,
     LoadingIconComponent
   ],

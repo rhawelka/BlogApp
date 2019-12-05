@@ -1,41 +1,47 @@
-<div class="postList">
-    <h1>Posts List Component</h1>
-    <button class="btn btn-primary ml-1" routerLink="/addPost">addPost</button>
+<div class="post-list">
+  <div class="d-flex justify-content-around">
+    <h1>Posts List</h1>
+    <button class="btnBlack" routerLink="/addPost">Create post</button></div>
     <br>
         <hr>
-            <div *ngIf="userToPost.length>0">
+            <div *ngIf="userToPost.length>0; else loadingPage">
                 <div class="container">
                     <div
                         class="row post-item mt-1"
                         *ngFor="let post of posts; let i = index;index as y"
-                        [(ngModel)]="userToPost"
                         ngDefaultControl>
                         <div class="col-sm-3">
-
-                            Post #{{y+1}}
+                            <p>Post #{{y+1}}</p>
                             <hr>
-                                by
-                                {{userToPost[i]?.first_name}}
-                                {{userToPost[i]?.last_name}}
+                                <p>
+                                    by
+                                    {{userToPost[i]?.first_name}}
+                                    {{userToPost[i]?.last_name}}</p>
+                                <p>({{userToPost[i]?.email}})</p>
                                 <hr>
-                                    ({{userToPost[i]?.email}})
+
+                                    <img
+                                        src="{{userToPost[i]?._links.avatar.href}}"
+                                        alt="userPhoto"
+                                        style="width: 60px; height: 60px; border: 1px solid black;">
+                                        <br>
+                                            <button class="btnBlack mt-2">View profile</button>
 
                                 </div>
-                                <div class="col-sm-9">
-                                    <span class="post-title">
-                                        {{post.title}}</span>
-                                    <br>
-                                        <span class="post-body">
-                                            {{post.body}}</span>
-                                        <div>
-                                            <hr>
-                                                <app-comments [postId]="post.id"></app-comments>
+                                        <div class="col-sm-9">
+                                            <h4>
+                                                {{post.title}}</h4>
+                                            <p>
+                                                {{post.body}}</p>
+                                            <div>
+                                                <hr>
+                                                        <app-comments [postId]="post.id"></app-comments>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <ng-template #loadingPage>
-                                <app-loading-page></app-loading-page>
-                            </ng-template>
+                                <ng-template #loadingPage>
+                                    <app-loading-page></app-loading-page>
+                                </ng-template>

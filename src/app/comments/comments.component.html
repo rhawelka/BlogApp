@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" (click)="showComments()">See comments</button>
+<button type="button" class="btnBlack m-1" (click)="showComments()">Comments</button>
 <div *ngIf="showCommentsToUser">
     <div *ngIf="commentsToPost.length > 0; else noComments">
         <div *ngFor="let comment of commentsToPost; let i = index" class="ml-5">

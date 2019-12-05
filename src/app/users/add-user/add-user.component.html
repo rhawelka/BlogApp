@@ -79,8 +79,8 @@
                                     <option *ngFor="let gen of gender" [value]="gen">{{gen}}</option>
                                   </select>
                                 </div>
-                                <button class="btn btn-primary mr-1" routerLink="/users">Cancel</button>
-                                <button class="btn btn-primary" [disabled]="!contactForm.valid">Save</button>
-                                <button type="reset" class="btn btn-primary" (click)="resetForm()">Reset</button>
+                                <button class="btnBlack mr-1" routerLink="/users">Cancel</button>
+                                <button class="btnBlack" [disabled]="!contactForm.valid">Save</button>
+                                <button type="reset" class="btnBlack" (click)="resetForm()">Reset</button>
                             </form>
                             <br></div>

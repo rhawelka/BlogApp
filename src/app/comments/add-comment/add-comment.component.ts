@@ -13,17 +13,14 @@ export class AddCommentComponent implements OnInit {
 
     comment = new Comment();
     showComponent : boolean;
-    post_id : number;
-    name : string;
-    email : string;
-    commentBody : string;
 
     @Input()
     postId : number;
 
     onSubmit() {
-        console.log("submit");
+        this.comment.post_id = this.postId;
         this.addComment(this.comment);
+        console.log(this.comment);
         this.resetForm();
     }
 

@@ -1,11 +1,10 @@
 <div class="users-list">
-  <div class="d-flex justify-content-center">
-    <h1>Users List Component</h1>
-    <button type="button" class="btn-success add-btn" routerLink="/addUser">addUser</button>
+    <div class="d-flex justify-content-around">
+    <h1>Users List</h1>
+    <button type="button" class="btnBlack" routerLink="/addUser">Create user</button>
 </div>
-    <ul class="list-group">
-        <div *ngIf="users$; else loadingPage">
-            <table class="table table-dark">
+        <div *ngIf="users; else loadingPage" class="mt-2 user-table">
+            <table class="table table-light">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -16,20 +15,19 @@
                 </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let user of users$;index as y">
+                  <tr *ngFor="let user of users;index as y">
                     <th scope="row">{{y+1}}</th>
-                    <td>{{user.first_name}}</td>
+                    <td><img src="{{user._links.avatar.href}}" style="width: 40px; height: 40px; border: 2px solid white; border-radius: 25px;" class="mr-2" alt="userPhoto">{{user.first_name}}</td>
                     <td>{{user.last_name}}</td>
                     <td>{{user.email}}</td>
-                    <td>{{user.gender}}</td>
-                    <button [routerLink]="['/users', user.id]">Details</button>
-                      <button [routerLink]="['/editUser', user.id]">Edit</button>
-                      <button (click)="deleteUser(user.id)">Delete</button>
+                    <td>{{user.gender | uppercase}}</td>
+                    <td><button [routerLink]="['/users', user.id]" class="btnBlack mr-2">Details</button>
+                    <button [routerLink]="['/editUser', user.id]" class="btnBlack mr-2">Edit</button>
+                    <button (click)="deleteUser(user.id)" class="btnBlack">Delete</button></td>
                   </tr>
                 </tbody>
               </table>
       </div>
-    </ul>
   </div>
 
   <ng-template #loadingPage>
