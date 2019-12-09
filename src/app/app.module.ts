@@ -26,6 +26,9 @@ import { AddCommentComponent } from './comments/add-comment/add-comment.componen
 import { UserAllPostsListComponent } from './users/user-all-posts-list/user-all-posts-list.component';
 import { LoadingPageComponent } from './loading-page/loading-page.component';
 import { LoadingIconComponent } from './loading-page/loading-icon/loading-icon.component';
+import { HomeArticleComponent } from './home/home-article/home-article.component';
+import { HomeSidebarComponent } from './home/home-sidebar/home-sidebar.component';
+import { UserDataComponent } from './users/user-data/user-data.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { LoadingIconComponent } from './loading-page/loading-icon/loading-icon.c
     AddCommentComponent,
     UserAllPostsListComponent,
     LoadingPageComponent,
-    LoadingIconComponent
+    LoadingIconComponent,
+    HomeArticleComponent,
+    HomeSidebarComponent,
+    UserDataComponent
   ],
   imports: [
     BrowserModule,

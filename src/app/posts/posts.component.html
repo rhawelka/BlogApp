@@ -2,7 +2,6 @@
   <div class="d-flex justify-content-around">
     <h1>Posts List</h1>
     <button class="btnBlack" routerLink="/addPost">Create post</button></div>
-    <br>
         <hr>
             <div *ngIf="userToPost.length>0; else loadingPage">
                 <div class="container">
@@ -29,10 +28,10 @@
 
                                 </div>
                                         <div class="col-sm-9">
-                                            <h4>
-                                                {{post.title}}</h4>
-                                            <p>
-                                                {{post.body}}</p>
+                                            <h3>
+                                                {{post.title}}</h3>
+                                            <span style="font-family: Open Sans;">
+                                                {{post.body}}</span>
                                             <div>
                                                 <hr>
                                                         <app-comments [postId]="post.id"></app-comments>

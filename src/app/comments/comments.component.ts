@@ -1,6 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {CommentsService} from '../services/comments.service';
-import {Comment} from '../models/comment';
 
 @Component({
   selector: 'app-comments',
@@ -9,13 +8,17 @@ import {Comment} from '../models/comment';
 })
 
 export class CommentsComponent implements OnInit {
+    constructor(private _commentsService : CommentsService) {}
 
     @Input()
     postId : number;
+
     commentsToPost = [];
     showCommentsToUser: boolean = false;
 
-    constructor(private _commentsService : CommentsService) {}
+    commentSend(comment){
+     this.commentsToPost.push(comment);
+    }
 
     showComments(){
       this.showCommentsToUser = !this.showCommentsToUser;

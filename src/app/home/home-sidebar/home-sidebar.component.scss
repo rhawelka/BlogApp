@@ -1,0 +1,54 @@
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sidebar-post-list {
+    text-align: center;
+}
+
+.sidebar-item-title {
+    margin: 10px 0;
+    padding: 16px 32px;
+    color: white;
+    background-color: black;
+    font-family: "Oswald";
+}
+.sideber-item-advertise {
+    height: 25vh;
+    border: 5px solid lightgray;
+}
+
+.sidebar-people-item {
+    padding: 5px;
+}
+.sidebar-tags-item {
+    padding: 5px;
+    margin: 2px;
+    background-color: grey;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    &:hover {
+      cursor: pointer;
+      background-color: black;
+  }
+}
+.sidebar-item-follow-icons {
+  line-height: 40px;
+    font-size: 40px;
+    color: black;
+    padding: 10px;
+    i {
+        margin-right: 8px;
+        &:hover {
+            cursor: pointer;
+            font-size: 38px;
+        }
+
+    }
+
+}
+
+// <!-- <div class="sidebar-people-item"></div> -->

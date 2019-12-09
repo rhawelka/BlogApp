@@ -1,19 +1,25 @@
-<button type="button" class="btnBlack m-1" (click)="showComments()">Comments</button>
-<div *ngIf="showCommentsToUser">
+<button type="button" class="btnBlack m-1" (click)="showComments()">
+    <i class="far fa-comment mr-1"></i>Comments</button>
+<div *ngIf="showCommentsToUser" class="m-1">
     <div *ngIf="commentsToPost.length > 0; else noComments">
-        <div *ngFor="let comment of commentsToPost; let i = index" class="ml-5">
-            <span class="comment-title">{{comment.name}}</span>
-            <br>
-                <span style="font-size: 13px">By:</span>
-                <span class="comment-author">{{comment.email}}</span>
+        <div class="ml-5" *ngFor="let comment of commentsToPost; let i = index">
+            <div class="comment-container m-2 p-2">
+                <span>
+                    <i class="fas fa-user-alt mr-1"></i>{{comment.email}}</span>
                 <br>
-                    <span class="comment-body">{{comment.body}}</span>
-                    <hr></div>
-                </div>
-                <div class="ml-5">
-                    <app-add-comment [postId]="postId"></app-add-comment>
+                    <span>
+                        <i class="far fa-calendar-plus mr-1"></i>
+                        Jul 13, 2019</span>
+                    <br>
+                        <span>{{comment.body}}</span>
+                    </div>
+                    <!-- <app-comment-elem *ngFor="let comment of commentsToPost; let i = index"></app-comment-elem> -->
                 </div>
             </div>
-            <ng-template #noComments>
-                Write first comment bro!
-            </ng-template>
+            <div class="ml-5">
+                <app-add-comment (addCommentAction)='commentSend($event)' [postId]="postId"></app-add-comment>
+            </div>
+        </div>
+        <ng-template #noComments>
+            <h3>Write first comment bro!</h3>
+        </ng-template>
