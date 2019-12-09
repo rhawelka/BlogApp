@@ -3,6 +3,7 @@ import {Post} from '../models/post';
 import {PostsService} from '../services/posts.service';
 import {User} from '../models/user';
 import {UserService} from '../services/user.service';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-posts',
@@ -28,7 +29,7 @@ export class PostsComponent implements OnInit {
     }
 
     getUserIdByPost(){
-        this.usersIds = this.posts.map(post => Number (post.user_id));
+        this.usersIds = this.posts.map(post => Number(post.user_id));
     }
 
     setUsersToArrayById(){

@@ -4,7 +4,8 @@ import {Params, ActivatedRoute} from '@angular/router';
 import {UserService} from 'src/app/services/user.service';
 import {NgForm} from '@angular/forms';
 
-@Component({selector: 'app-edit-user', templateUrl: './edit-user.component.html', styleUrls: ['./edit-user.component.scss']})
+@Component({
+  selector: 'app-edit-user', templateUrl: './edit-user.component.html', styleUrls: ['./edit-user.component.scss']})
 export class EditUserComponent implements OnInit {
 
     @ViewChild('contactForm', {static: false})

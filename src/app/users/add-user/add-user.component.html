@@ -99,12 +99,12 @@
                                 <div class="input-group-prepend">
                                     <label for="gender" class="input-group-text component-form-label">Gender</label>
                                 </div>
-                                <select name="gender" id="gender" [(ngModel)]=" user.gender">
+                                <select name="gender" id="gender" [(ngModel)]="user.gender" class="btnBlack">
                                     <option *ngFor="let gen of gender" [value]="gen">{{gen | uppercase}}</option>
                                 </select>
                             </div>
                             <button class="btnBlack m-1" routerLink="/users">Cancel</button>
-                            <button type="submit" class="btnBlack m-1" [disabled]="!contactForm.valid">Save</button>
+                            <button type="submit" class="btnBlack m-1" [disabled]="!contactForm.valid">Create</button>
                             <button type="reset" class="btnBlack m-1" (click)="resetForm()">Reset</button>
                         </fieldset>
                     </form>

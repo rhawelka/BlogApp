@@ -1,4 +1,4 @@
-<button class="btnBlack m-2" (click)="showAddCommentComponent()">Add comment</button>
+<button class="btnBlack m-2" (click)="showAddCommentComponent()"><i class="far fa-comment-dots m-1"></i>Add comment</button>
 <div *ngIf="showComponent">
     <div *ngIf="postId" class="CreateCommenttoPost#1" ngDefaultControl>
         <h5 class="m-2">Add comment to post #{{postId}}</h5>
@@ -51,7 +51,7 @@
                             required></textarea>
                           </div>
 
-                        <button type="submit" class="btnBlack m-1" [disabled]="!contactForm.valid">Post Comment</button>
+                        <button type="submit" class="btnBlack m-1" [disabled]="!contactForm.valid"><i class="fas fa-plus m-1"></i>Post Comment</button>
                         <button type="reset" class="btnBlack m-1" (click)="resetForm()">Reset</button>
                     </form>
                 </div>
