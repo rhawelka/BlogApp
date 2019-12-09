@@ -25,12 +25,10 @@
   &:hover{
     color: lightgray;
   }
-
-   // border-radius: 5px;
-  // -webkit-border-radius: 5px;
-  // -moz-border-radius: 5px;
-  // -ms-border-radius: 5px;
-  // -o-border-radius: 5px;
+  &:disabled{
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }
 }
 h1 {
     font-family: "Oswald";

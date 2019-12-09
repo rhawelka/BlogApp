@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-add-user',

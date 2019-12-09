@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,10 @@ export class AppComponent implements OnInit {
 
   title = 'taskApp';
 
-  ngOnInit(): void {}
+
+  ngOnInit(): void {
+
+  }
 }
+
+

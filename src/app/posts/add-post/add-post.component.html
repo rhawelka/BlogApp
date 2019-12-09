@@ -1,29 +1,46 @@
-
 <div class="add-post">
-    <h2>Add Post</h2>
-    <div class="input-group input-group-lg mt-1">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-lg">Title</span>
-        </div>
-        <input
-            [(ngModel)]="postTitle"
-            placeholder="post title"
-            type="text"
-            class="form-control"
-            aria-label="Large"
-            aria-describedby="inputGroup-sizing-sm"></div>
+    <form (ngSubmit)="onSubmit()" #addPostForm="ngForm" id="addPostForm">
+            <legend>Create post</legend>
+
             <div class="input-group input-group-lg mt-1">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-lg">Content</span>
+                    <label for="title" class="input-group-text component-form-label">Title</label>
                 </div>
                 <input
-                    [(ngModel)]="postBody"
-                    placeholder="post content"
+                    name="title"
+                    id="title"
+                    #title="ngModel"
+                    [(ngModel)]="post.title"
+                    placeholder="post title"
                     type="text"
-                    class="form-control"
+                    class="form-control component-form-input"
                     aria-label="Large"
-                    aria-describedby="inputGroup-sizing-sm"></div>
+                    aria-describedby="inputGroup-sizing-sm"
+                    required></div>
+                <small
+                    *ngIf="!title.valid && title.touched"
+                    id="phoneHelp"
+                    class="form-text text-muted">Field required</small>
+                <div class="input-group input-group-lg mt-1">
+                    <div class="input-group-prepend">
+                        <label for="body" class="input-group-text component-form-label">Content</label>
+                    </div>
+                    <input
+                        name="body"
+                        id="body"
+                        #body="ngModel"
+                        [(ngModel)]="post.body"
+                        placeholder="post body"
+                        type="text"
+                        class="form-control component-form-input"
+                        aria-label="Large"
+                        aria-describedby="inputGroup-sizing-sm"
+                        required></div>
+                    <small
+                        *ngIf="!body.valid && body.touched"
+                        id="phoneHelp"
+                        class="form-text text-muted">Field required</small>
                     <br>
-            <button (click)="addPost()" class="btnBlack">Add post</button>
-        </div>
-        <hr>
+                        <button type="submit" class="btnBlack m-1" [disabled]="!addPostForm.valid">Add post</button>
+                </form>
+            </div>

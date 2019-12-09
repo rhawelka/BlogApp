@@ -39,4 +39,28 @@ export class UserDetailComponent implements OnInit {
                 this.getPostsByUserId();
             });
     }
+    // ngDoCheck() {
+    //   console.log()
+    // }
+
+    // ngAfterContentInit() {
+    //   console.log("ngAfterContentInit :");
+    // }
+
+    // ngAfterContentChecked() {
+    //   console.log("ngAfterContentChecked");
+    // }
+
+    // ngAfterViewInit() {
+    //   console.log("ngAfterViewInit");
+    // }
+
+    // ngAfterViewChecked() {
+    //   console.log("ngAfterViewChecked");
+    // }
+
+    // ngOnDestroy() {
+    //   console.log("ngOnDestroy");
+    // }
   }
+

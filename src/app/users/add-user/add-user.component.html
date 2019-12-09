@@ -1,86 +1,111 @@
-<div class="add-user">
+<div class="add-user p-4">
     <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-        <div class="input-group input-group-lg mt-1">
-            <div class="input-group-prepend">
-                <label for="first_name" class="input-group-text">First name</label>
-            </div>
-            <input
-                id="first_name"
-                [(ngModel)]=" user.first_name"
-                name="first_name"
-                #first_name="ngModel"
-                placeholder="first name"
-                type="text"
-                class="form-control"
-                aria-describedby="firstNameHelp"
-                required></div>
+        <fieldset>
+            <legend>Create new user</legend>
             <div class="input-group input-group-lg mt-1">
                 <div class="input-group-prepend">
-                    <label for="last_name" class="input-group-text">Last name</label>
+                    <label for="first_name" class="input-group-text component-form-label">First name</label>
                 </div>
                 <input
-                    id="last_name"
-                    name="last_name"
-                    [(ngModel)]=" user.last_name"
-                    #last_name="ngModel"
-                    placeholder="last name"
+                    id="first_name"
+                    [(ngModel)]=" user.first_name"
+                    name="first_name"
+                    #first_name="ngModel"
+                    placeholder="first name"
                     type="text"
-                    class="form-control"
-                    aria-describedby="lastNameHelp"
+                    class="form-control component-form-input"
+                    aria-describedby="firstNameHelp"
                     required></div>
+                <small
+                    *ngIf="!first_name.valid && first_name.touched"
+                    id="firstNameHelp"
+                    class="form-text text-muted">Field required</small>
                 <div class="input-group input-group-lg mt-1">
                     <div class="input-group-prepend">
-                        <label for="email" class="input-group-text">Email</label>
+                        <label for="last_name" class="input-group-text component-form-label">Last name</label>
                     </div>
                     <input
-                        id="email"
-                        name="email"
-                        [(ngModel)]=" user.email"
-                        #email="ngModel"
-                        type="email"
-                        placeholder="email"
-                        email
-                        class="form-control"
-                        aria-describedby="emailHelp"
+                        id="last_name"
+                        name="last_name"
+                        [(ngModel)]=" user.last_name"
+                        #last_name="ngModel"
+                        placeholder="last name"
+                        type="text"
+                        class="form-control component-form-input"
+                        aria-describedby="lastNameHelp"
                         required></div>
+                        <small
+                    *ngIf="!last_name.valid && last_name.touched"
+                    id="lastNameHelp"
+                    class="form-text text-muted">Field required</small>
                     <div class="input-group input-group-lg mt-1">
                         <div class="input-group-prepend">
-                            <label for="phone" class="input-group-text">Phone</label>
+                            <label for="email" class="input-group-text component-form-label">Email</label>
                         </div>
                         <input
-                            id="phone"
-                            name="phone"
-                            #phone="ngModel"
-                            [(ngModel)]=" user.phone"
-                            placeholder="phone"
-                            type="text"
-                            class="form-control"
-                            aria-describedby="inputGroup-sizing-sm"
+                            id="email"
+                            name="email"
+                            [(ngModel)]=" user.email"
+                            #email="ngModel"
+                            type="email"
+                            placeholder="email"
+                            email
+                            class="form-control component-form-input"
+                            aria-describedby="emailHelp"
                             required></div>
+                            <small
+                    *ngIf="!email.valid && email.touched"
+                    id="emailHelp"
+                    class="form-text text-muted">Field required</small>
                         <div class="input-group input-group-lg mt-1">
                             <div class="input-group-prepend">
-                                <label for="address" class="input-group-text">Address</label>
+                                <label for="phone" class="input-group-text component-form-label">Phone</label>
                             </div>
-                            <textarea
-                                id="address"
-                                name="address"
-                                [(ngModel)]=" user.address"
-                                #address="ngModel"
-                                placeholder="address"
+                            <input
+                                id="phone"
+                                name="phone"
+                                #phone="ngModel"
+                                [(ngModel)]=" user.phone"
+                                placeholder="phone"
                                 type="text"
-                                class="form-control"
+                                class="form-control component-form-input"
                                 aria-describedby="inputGroup-sizing-sm"
-                                required></textarea></div>
+                                required></div>
+                                <small
+                    *ngIf="!phone.valid && phone.touched"
+                    id="phoneHelp"
+                    class="form-text text-muted">Field required</small>
                             <div class="input-group input-group-lg mt-1">
                                 <div class="input-group-prepend">
-                                    <label for="gender" class="input-group-text">Gender</label>
+                                    <label for="address" class="input-group-text component-form-label">Address</label>
+                                </div>
+                                <textarea
+                                    id="address"
+                                    name="address"
+                                    [(ngModel)]=" user.address"
+                                    #address="ngModel"
+                                    placeholder="address"
+                                    type="text"
+                                    class="form-control component-form-input"
+                                    aria-describedby="inputGroup-sizing-sm"
+                                    required></textarea>
+
+                            </div>
+                            <small
+                    *ngIf="!address.valid && address.touched"
+                    id="addressHelp"
+                    class="form-text text-muted">Field required</small>
+                            <div class="input-group input-group-lg mt-1">
+                                <div class="input-group-prepend">
+                                    <label for="gender" class="input-group-text component-form-label">Gender</label>
                                 </div>
                                 <select name="gender" id="gender" [(ngModel)]=" user.gender">
-                                    <option *ngFor="let gen of gender" [value]="gen">{{gen}}</option>
-                                  </select>
-                                </div>
-                                <button class="btnBlack mr-1" routerLink="/users">Cancel</button>
-                                <button class="btnBlack" [disabled]="!contactForm.valid">Save</button>
-                                <button type="reset" class="btnBlack" (click)="resetForm()">Reset</button>
-                            </form>
-                            <br></div>
+                                    <option *ngFor="let gen of gender" [value]="gen">{{gen | uppercase}}</option>
+                                </select>
+                            </div>
+                            <button class="btnBlack m-1" routerLink="/users">Cancel</button>
+                            <button type="submit" class="btnBlack m-1" [disabled]="!contactForm.valid">Save</button>
+                            <button type="reset" class="btnBlack m-1" (click)="resetForm()">Reset</button>
+                        </fieldset>
+                    </form>
+                    <br></div>

@@ -1,15 +1,15 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <div *ngIf="user; else loader">
+            <div *ngIf="user; else loader" class="p-2 m-1">
                 <app-user-data [user]="user"></app-user-data>
             </div>
         </div>
         <div class="col-sm-8">
-            <div *ngIf="userId; else loader">
+            <div *ngIf="userId; else loader" class="p-2 m-1">
                 <app-add-post [userId]="userId"></app-add-post>
             </div>
-            <div *ngIf="userPosts; else loader">
+            <div *ngIf="userPosts; else loader" class="p-2 m-1">
                 <app-user-all-posts-list [userPosts]="userPosts"></app-user-all-posts-list>
             </div>
 

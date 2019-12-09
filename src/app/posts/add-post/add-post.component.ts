@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { PostsService } from 'src/app/services/posts.service';
 import { Post } from 'src/app/models/post';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-post',
@@ -9,9 +10,10 @@ import { Post } from 'src/app/models/post';
 })
 export class AddPostComponent implements OnInit {
 
-  postTitle: string;
-  postBody: string;
-  user_id: number;
+  @ViewChild('addPostForm', {static: false})
+  addPostForm: NgForm;
+
+  post = new Post();
 
   @Input()
   userId:  number;
@@ -19,14 +21,18 @@ export class AddPostComponent implements OnInit {
   constructor(private _postsService: PostsService) { }
 
 
+  onSubmit(){
+    this.addPost(this.post);
+    this.resetForm();
+  }
 
-  addPost(){
-    const post: Post={
-      id: null,
-      user_id: this.userId.toString(),
-      title: this.postTitle,
-      body: this.postBody
-    }
+  resetForm() {
+    this.post= new Post();
+    this.addPostForm.reset();
+  }
+
+
+  addPost(post){
     this._postsService.addPost(post).subscribe(post => {
       console.log("dodano post: " +post.title)
     })
@@ -34,6 +40,7 @@ export class AddPostComponent implements OnInit {
 
 
   ngOnInit() {
+    this.post.user_id = this.userId.toString();
   }
 
 }

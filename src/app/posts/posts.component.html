@@ -12,20 +12,23 @@
                         <div class="col-sm-3">
                             <p>Post #{{y+1}}</p>
                             <hr>
-                                <p>
+                              <div class="d-flex justify-content-around">
+                                <div class="p-2 m-1"><p>
                                     by
                                     {{userToPost[i]?.first_name}}
                                     {{userToPost[i]?.last_name}}</p>
-                                <p>({{userToPost[i]?.email}})</p>
-                                <hr>
+                                <p>({{userToPost[i]?.email}})</p></div>
+                                <div class="p-2 m-1"> <img
+                                  src="{{userToPost[i]?._links.avatar.href}}"
+                                  alt="userPhoto"
+                                  style="width: 60px; height: 60px; border: 1px solid black;"></div>
 
-                                    <img
-                                        src="{{userToPost[i]?._links.avatar.href}}"
-                                        alt="userPhoto"
-                                        style="width: 60px; height: 60px; border: 1px solid black;">
-                                        <br>
-                                            <button class="btnBlack mt-2">View profile</button>
-
+                                                              </div>
+                                                             <hr>
+                            <div class="d-flex justify-content-around">
+                                <a routerLink="/users/{{userToPost[i]?.id}}" class="btnBlack mt-2">
+                                  <i class="fas fa-user-tie m-1"></i>View profile</a>
+                            </div>
                                 </div>
                                         <div class="col-sm-9">
                                             <h3>
