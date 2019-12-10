@@ -9,6 +9,7 @@ import {UsersListComponent} from './users/users-list/users-list.component';
 import {AddUserComponent} from './users/add-user/add-user.component';
 import {EditUserComponent} from './users/edit-user/edit-user.component';
 import {AddPostComponent} from './posts/add-post/add-post.component';
+import {PostDetailsPageComponent} from './posts/post-details-page/post-details-page.component';
 
 const routes : Routes = [
     {
@@ -18,13 +19,16 @@ const routes : Routes = [
         path: 'posts',
         component: PostsComponent
     }, {
+        path: 'posts/:postId',
+        component: PostDetailsPageComponent
+    }, {
         path: 'addUser',
         component: AddUserComponent
     }, {
         path: 'addPost',
         component: AddPostComponent
     }, {
-        path: 'editUser/:id',
+        path: 'editUser/userId',
         component: EditUserComponent
     }, {
         path: 'users',
@@ -34,7 +38,7 @@ const routes : Routes = [
                 path: '',
                 component: UsersListComponent
             }, {
-                path: ':id',
+                path: ':userId',
                 component: UserDetailComponent
             }
         ]

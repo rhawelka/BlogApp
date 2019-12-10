@@ -1,3 +1,5 @@
+
+
 <div class="post-list">
   <div class="d-flex justify-content-around">
     <h1>Posts List</h1>
@@ -37,7 +39,12 @@
                                                 {{post.body}}</span>
                                             <div>
                                                 <hr>
-                                                        <app-comments [postId]="post.id"></app-comments>
+                                                <div class="d-flex justify-content-around">
+                                                  <app-comments [postId]="post.id"></app-comments>
+                                                  <a routerLink="/posts/{{post.id}}" class="btnBlack m-1"><i class="far fa-eye mr-2">View post</i></a>
+                                                </div>
+
+
                                                 </div>
                                             </div>
                                         </div>
