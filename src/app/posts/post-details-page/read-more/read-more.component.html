@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row p-3">
+        <div *ngIf="posts.length > 0">
+        <h1>Read More</h1>
+        <div class="d-flex justify-content-around flex-wrap">
+                <div *ngFor="let post of posts">
+                    <div class="p-3">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://picsum.photos/500/400" class="img-fluid" alt="lorem pixel">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        {{post.title}}</h5>
+                                    <a routerLink="/posts/{{post.id}}" class="btnBlack" target="_blank">Read More<i class="fab fa-readme ml-2"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

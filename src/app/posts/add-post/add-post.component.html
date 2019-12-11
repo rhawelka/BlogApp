@@ -1,7 +1,8 @@
-<div class="add-post">
+<div class="add-post custom-fade-in">
     <form (ngSubmit)="onSubmit()" #addPostForm="ngForm" id="addPostForm">
-            <legend>Create post</legend>
+        <legend>Create post</legend>
 
+        <div>
             <div class="input-group input-group-lg mt-1">
                 <div class="input-group-prepend">
                     <label for="title" class="input-group-text component-form-label">Title</label>
@@ -21,6 +22,8 @@
                     *ngIf="!title.valid && title.touched"
                     id="phoneHelp"
                     class="form-text text-muted">Field required</small>
+            </div>
+            <div>
                 <div class="input-group input-group-lg mt-1">
                     <div class="input-group-prepend">
                         <label for="body" class="input-group-text component-form-label">Content</label>
@@ -40,7 +43,9 @@
                         *ngIf="!body.valid && body.touched"
                         id="phoneHelp"
                         class="form-text text-muted">Field required</small>
-                    <br>
-                        <button type="submit" class="btnBlack m-1" [disabled]="!addPostForm.valid"><i class="fas fa-plus m-1"></i>Add post</button>
+                </div>
+                <br>
+                    <button type="submit" class="btnBlack m-1" [disabled]="!addPostForm.valid">
+                        <i class="fas fa-plus m-1"></i>Add post</button>
                 </form>
             </div>

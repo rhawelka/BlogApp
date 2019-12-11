@@ -1,0 +1,14 @@
+.user-details {
+  margin-top: 15vh;
+  border: thin solid lightgray;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.user-details img {
+  border-radius: 50%;
+}
+/*# sourceMappingURL=user-data.component.css.map */

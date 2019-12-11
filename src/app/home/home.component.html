@@ -4,22 +4,24 @@
         <div class="row mx-md-n5">
             <div class="col-12 col-md-8 px-md-5">
                 <!-- Article -->
-                <app-home-article></app-home-article>
-                            <!-- Article End-->
-                            <!-- Article -->
-                            <app-home-article></app-home-article>
-                                        <!-- Article End-->
-                                        <!-- Article -->
-                                        <app-home-article></app-home-article>
-                                                    <!-- Article End-->
-                                                </div>
+                <div *ngIf="posts.length > 0; else loaderIcon" >
+                        <app-home-article *ngFor="let post of posts" [post]="post"></app-home-article>
+                </div>
+                <!-- Article End-->
+            </div>
 
-                                                <div class="col-6 col-md-4 px-md-1 mb-3">
-<!-- Sidebar -->
-<app-home-sidebar></app-home-sidebar>
-<!-- Sidebar-end -->
-                                                </div>
+            <div class="col-6 col-md-4 px-md-1 mb-3">
+                <!-- Sidebar -->
+                <div *ngIf="posts.length > 0; else loaderIcon">
+                    <app-home-sidebar [posts]="posts"></app-home-sidebar>
+                </div>
+                <!-- Sidebar-end -->
+            </div>
 
-                                            </div>
-                                        </div>
-                                    </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loaderIcon>
+    <app-loading-icon></app-loading-icon>
+</ng-template>

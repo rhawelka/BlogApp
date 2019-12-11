@@ -28,7 +28,7 @@ const routes : Routes = [
         path: 'addPost',
         component: AddPostComponent
     }, {
-        path: 'editUser/userId',
+        path: 'editUser/:id',
         component: EditUserComponent
     }, {
         path: 'users',
@@ -38,7 +38,7 @@ const routes : Routes = [
                 path: '',
                 component: UsersListComponent
             }, {
-                path: ':userId',
+                path: ':id',
                 component: UserDetailComponent
             }
         ]

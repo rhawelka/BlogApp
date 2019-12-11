@@ -1,7 +1,7 @@
 <div class="post-details">
     <div *ngIf="post; else loader">
 
-        <div class="container">
+        <div class="container custom-fade-in">
             <div class="row">
                 <div class="col"></div>
                 <div class="col-8">
@@ -50,72 +50,10 @@
                         </div>
 
                     </div>
-                    <div class="container">
-                        <div class="row p-3">
-                            <h1>Read More</h1>
-                            <div class="d-flex justify-content-around flex-wrap">
-                                <div class="p-3">
-                                    <div class="card text-center" style="width: 18rem;">
-                                        <img src="https://picsum.photos/500/400" class="img-fluid" alt="lorem pixel">
-                                            <div class="card-body">
-                                                <h5 class="card-title">{{post.title}}</h5>
-                                                <a href="#" class="btnBlack">Read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="p-3">
-                                        <div class="card text-center" style="width: 18rem;">
-                                            <img src="https://picsum.photos/500/400" class="img-fluid" alt="lorem pixel">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">{{post.title}}</h5>
-                                                    <a href="#" class="btnBlack">Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="p-3">
-                                            <div class="card text-center" style="width: 18rem;">
-                                                <img src="https://picsum.photos/500/400" class="img-fluid" alt="lorem pixel">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">{{post.title}}</h5>
-                                                        <a href="#" class="btnBlack">Read more</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="p-3">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="https://picsum.photos/500/400" class="img-fluid" alt="lorem pixel">
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">{{post.title}}</h5>
-                                                            <a href="#" class="btnBlack">Read more</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3">
-                                                    <div class="card text-center" style="width: 18rem;">
-                                                        <img src="https://picsum.photos/500/400" class="img-fluid" alt="lorem pixel">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">{{post.title}}</h5>
-                                                                <a href="#" class="btnBlack">Read more</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="p-3">
-                                                        <div class="card text-center" style="width: 18rem;">
-                                                            <img src="https://picsum.photos/500/400" class="img-fluid" alt="lorem pixel">
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title">{{post.title}}</h5>
-                                                                    <a href="#" class="btnBlack">Read more</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                    <app-read-more></app-read-more>
+                </div>
+            </div>
 
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <ng-template #loader>
-                                        <app-loading-page></app-loading-page>
-                                    </ng-template>
+            <ng-template #loader>
+                <app-loading-page></app-loading-page>
+            </ng-template>
