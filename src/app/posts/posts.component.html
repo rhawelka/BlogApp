@@ -1,49 +1,57 @@
 <div class="post-list">
-  <div class="d-flex justify-content-around">
-    <h1>Posts List</h1>
-    <button class="btnBlack" routerLink="/addPost">Create post</button></div>
-        <hr>
-            <div *ngIf="userToPost.length>0; else loadingPage">
-                <div class="container">
-                    <div
-                        class="row post-item mt-1"
-                        *ngFor="let post of posts; let i = index;index as y"
-                        ngDefaultControl>
-                        <div class="col-sm-3">
-                            <p>Post #{{y+1}}</p>
-                            <hr>
-                              <div class="d-flex justify-content-around">
-                                <div class="p-2 m-1"><p>
-                                    by
-                                    {{userToPost[i]?.first_name}}
-                                    {{userToPost[i]?.last_name}}</p>
-                                <p>({{userToPost[i]?.email}})</p></div>
-                                <div class="p-2 m-1"> <img
-                                  src="{{userToPost[i]?._links.avatar.href}}"
-                                  alt="userPhoto"
-                                  style="width: 60px; height: 60px; border: 1px solid black;"></div>
-
-                                                              </div>
-                                                             <hr>
+    <div class="d-flex justify-content-around">
+        <h1>Posts List</h1>
+        <button class="btnBlack" routerLink="/addPost">Create post</button>
+    </div>
+    <hr>
+        <div *ngIf="userToPost.length>0; else loadingPage">
+            <div class="container custom-fade-in">
+                <div
+                    class="row post-item mt-1"
+                    *ngFor="let post of posts; let i = index;index as y"
+                    ngDefaultControl>
+                    <div class="col-sm-3">
+                        <p>Post #{{y+1}}</p>
+                        <hr>
                             <div class="d-flex justify-content-around">
-                                <a routerLink="/users/{{userToPost[i]?.id}}" class="btnBlack mt-2">
-                                  <i class="fas fa-user-tie m-1"></i>View profile</a>
-                            </div>
+                                <div class="p-2 m-1">
+                                    <p>
+                                        by
+                                        {{userToPost[i]?.first_name}}
+                                        {{userToPost[i]?.last_name}}</p>
+                                    <p>({{userToPost[i]?.email}})</p>
                                 </div>
-                                        <div class="col-sm-9">
-                                            <h3>
-                                                {{post.title}}</h3>
-                                            <span style="font-family: Open Sans;">
-                                                {{post.body}}</span>
-                                            <div>
-                                                <hr>
-                                                        <app-comments [postId]="post.id"></app-comments>
-                                                </div>
-                                            </div>
+                                <div class="p-2 m-1">
+                                    <img
+                                        src="{{userToPost[i]?._links.avatar.href}}"
+                                        alt="userPhoto"
+                                        style="width: 60px; height: 60px; border: 1px solid black;"></div>
+
+                                </div>
+                                <hr>
+                                    <div class="d-flex justify-content-around">
+                                        <a routerLink="/users/{{userToPost[i]?.id}}" class="btnBlack mt-2">
+                                            <i class="fas fa-user-tie m-1"></i>View profile</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <h3>
+                                        {{post.title}}</h3>
+                                    <span style="font-family: Open Sans;">
+                                        {{post.body}}</span>
+                                    <div>
+                                        <div class="d-flex justify-content-around">
+                                                <a class="btnBlack m-2" routerLink="/posts/{{post.id}}">Read More<i class="fab fa-readme ml-2"></i></a>
+                                        </div>
+                                        <hr>
+                                            <app-comments [postId]="post.id"></app-comments>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                <ng-template #loadingPage>
-                                    <app-loading-page></app-loading-page>
-                                </ng-template>
+                    <ng-template #loadingPage>
+                        <app-loading-page></app-loading-page>
+                    </ng-template>

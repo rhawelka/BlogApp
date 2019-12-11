@@ -1,0 +1,18 @@
+#mainNav {
+  background-color: black;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 50px;
+}
+
+#mainNav .nav-link {
+  color: white;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+/*# sourceMappingURL=nav.component.css.map */

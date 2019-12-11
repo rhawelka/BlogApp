@@ -14,6 +14,8 @@ export class AddPostComponent implements OnInit {
   addPostForm: NgForm;
 
   post = new Post();
+  submitted: boolean = false;
+
 
   @Input()
   userId:  number;
@@ -31,10 +33,10 @@ export class AddPostComponent implements OnInit {
     this.addPostForm.reset();
   }
 
-
   addPost(post){
     this._postsService.addPost(post).subscribe(post => {
-      console.log("dodano post: " +post.title)
+      console.log("dodano post: ")
+      console.log(post);
     })
   }
 

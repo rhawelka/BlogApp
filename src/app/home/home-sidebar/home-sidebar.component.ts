@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PostsService } from 'src/app/services/posts.service';
 import { Post } from 'src/app/models/post';
 
@@ -9,26 +9,14 @@ import { Post } from 'src/app/models/post';
 })
 export class HomeSidebarComponent implements OnInit {
 
-  constructor(private _postService: PostsService) { }
 
-  postsToSidebarArr: Array<Post> = [];
-  private _numOfPosts: number = 4;
+  constructor() { }
 
-  getPostsToSidebar(numOfPosts){
-    for (let i = 1; i <= numOfPosts; i++) {
-    this._postService.getPostById(i).subscribe( post => {
-    this.postsToSidebarArr.push(post);
-    });
-  }
-}
+  @Input()
+  posts: Array<Post> = [];
 
-
-
-
-
-
-  ngOnInit() {
-    this.getPostsToSidebar(this._numOfPosts);
-  }
+  ngOnInit(): void {}
 
 }
+
+

@@ -42,11 +42,11 @@ export class AddCommentComponent implements OnInit {
     addComment(comment) {
         this
             ._commentService
-            .addComment(comment);
-            // .subscribe(comment => {
-            //   console.log("zwrotka z API : ");
-            //     console.log(comment);
-            // })
+            .addComment(comment)
+            .subscribe(comment => {
+              console.log("zwrotka z API : ");
+                console.log(comment);
+            })
     }
 
     ngOnInit() {

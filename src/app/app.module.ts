@@ -29,6 +29,8 @@ import { LoadingIconComponent } from './loading-page/loading-icon/loading-icon.c
 import { HomeArticleComponent } from './home/home-article/home-article.component';
 import { HomeSidebarComponent } from './home/home-sidebar/home-sidebar.component';
 import { UserDataComponent } from './users/user-data/user-data.component';
+import { PostDetailsPageComponent } from './posts/post-details-page/post-details-page.component';
+import { ReadMoreComponent } from './posts/post-details-page/read-more/read-more.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { UserDataComponent } from './users/user-data/user-data.component';
     LoadingIconComponent,
     HomeArticleComponent,
     HomeSidebarComponent,
-    UserDataComponent
+    UserDataComponent,
+    PostDetailsPageComponent,
+    ReadMoreComponent
   ],
   imports: [
     BrowserModule,

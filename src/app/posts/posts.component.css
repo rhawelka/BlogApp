@@ -1,0 +1,46 @@
+.post-list {
+  min-height: 100vh;
+  margin-top: 60px;
+}
+
+.post-item {
+  padding: 20px;
+  border: thin solid lightgray;
+  -webkit-animation: fadein .5s;
+  /*Safari,ChromeandOpera>12.1*/
+  /*Firefox<16*/
+  /*InternetExplorer*/
+  /*Opera<12.1*/
+  animation: fadein 1.5s;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox < 16 */
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer */
+
+/* Opera < 12.1 */
+/*# sourceMappingURL=posts.component.css.map */

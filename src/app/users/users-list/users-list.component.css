@@ -1,0 +1,44 @@
+.users-list {
+  margin-top: 60px;
+}
+
+.users-list .user-table {
+  position: relative;
+  -webkit-animation-name: example;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1.5s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 1.5s;
+  -webkit-animation-delay: -.75s;
+          animation-delay: -.75s;
+}
+
+.users-list .user-table td, .users-list .user-table th {
+  vertical-align: middle;
+}
+
+@-webkit-keyframes example {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes example {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=users-list.component.css.map */

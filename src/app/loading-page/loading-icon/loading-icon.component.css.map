@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAA;EACP,QAAQ,EAAE,KAAK;EAAE,iBAAiB;EAClC,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;CACZ",
+    "sources": [
+        "loading-icon.component.scss"
+    ],
+    "names": [],
+    "file": "loading-icon.component.css"
+}
