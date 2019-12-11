@@ -1,1 +1,6 @@
-/* No CSS *//*# sourceMappingURL=home-article.component.css.map */
+.article {
+  text-align: center;
+  background-color: white;
+  border: thin solid lightgray;
+}
+/*# sourceMappingURL=home-article.component.css.map */

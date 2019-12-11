@@ -18,7 +18,6 @@ export class PostDetailsPageComponent implements OnInit {
   getPostById(postId){
     this._postService.getPostById(postId).subscribe(res=>{
       this.post = res;
-      console.log(this.post);
     });
   }
 

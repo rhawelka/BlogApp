@@ -1,1 +1,5 @@
-/* No CSS *//*# sourceMappingURL=user-detail.component.css.map */
+.container {
+  min-height: 100vh;
+  margin-top: 60px;
+}
+/*# sourceMappingURL=user-detail.component.css.map */

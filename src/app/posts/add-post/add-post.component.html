@@ -28,7 +28,7 @@
                     <div class="input-group-prepend">
                         <label for="body" class="input-group-text component-form-label">Content</label>
                     </div>
-                    <input
+                    <textarea
                         name="body"
                         id="body"
                         #body="ngModel"
@@ -38,11 +38,55 @@
                         class="form-control component-form-input"
                         aria-label="Large"
                         aria-describedby="inputGroup-sizing-sm"
-                        required></div>
-                    <small
-                        *ngIf="!body.valid && body.touched"
-                        id="phoneHelp"
-                        class="form-text text-muted">Field required</small>
+                        required></textarea>
+                </div>
+                <small
+                    *ngIf="!body.valid && body.touched"
+                    id="phoneHelp"
+                    class="form-text text-muted">Field required</small>
+            </div>
+            <div class="container slide-container mt-3">
+                <div class="row p-2">
+                    <ng-container *ngIf="submittedPost===undefined">
+                        <div class="text-center mt-5">
+                            <div class="spinner-border" role="status"></div>
+                            <br>
+                                <p>Sending data...</p>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="submittedPost!==undefined">
+                            <ng-container *ngIf="errorsFromSubmit.length==0">
+                                <div class="container custom-fade-in">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h4>Created post: #{{submittedPost.result.id}}
+                                            </h4>
+                                            <p>Title:
+                                                {{submittedPost.result.title}}</p>
+                                            <p>
+                                                <i class="fas fa-voicemail m-1"></i>{{submittedPost._meta.message}}</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <ng-container *ngIf="errorsFromSubmit.length==0">
+                                                <button
+                                                    [routerLink]="['/posts', submittedPost.result.id]"
+                                                    class="btnBlack mr-2">
+                                                    <i class="fas fa-info-circle mr-2"></i>Post details</button>
+                                            </ng-container>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="errorsFromSubmit.length>0">
+                                <p>
+                                    <i class="fas fa-voicemail m-1"></i>{{submittedPost._meta.message}}</p>
+                                <p *ngFor="let error of errorsFromSubmit">
+                                    <i class="fas fa-link m-1"></i>{{error.field}}:
+
+                                    <i class="fas fa-exclamation-triangle m-1"></i>{{error.message}}</p>
+                            </ng-container>
+                        </ng-container>
+                    </div>
                 </div>
                 <br>
                     <button type="submit" class="btnBlack m-1" [disabled]="!addPostForm.valid">

@@ -8,8 +8,8 @@ import {UserDetailComponent} from './users/user-detail/user-detail.component';
 import {UsersListComponent} from './users/users-list/users-list.component';
 import {AddUserComponent} from './users/add-user/add-user.component';
 import {EditUserComponent} from './users/edit-user/edit-user.component';
-import {AddPostComponent} from './posts/add-post/add-post.component';
 import {PostDetailsPageComponent} from './posts/post-details-page/post-details-page.component';
+import { AddPostPageComponent } from './posts/add-post-page/add-post-page.component';
 
 const routes : Routes = [
     {
@@ -26,7 +26,7 @@ const routes : Routes = [
         component: AddUserComponent
     }, {
         path: 'addPost',
-        component: AddPostComponent
+        component: AddPostPageComponent
     }, {
         path: 'editUser/:id',
         component: EditUserComponent

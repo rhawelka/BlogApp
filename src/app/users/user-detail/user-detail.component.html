@@ -6,10 +6,10 @@
             </div>
         </div>
         <div class="col-sm-8">
-            <div *ngIf="userId; else loader" class="p-2 m-1">
+            <div *ngIf="userId" class="p-2 m-1">
                 <app-add-post [userId]="userId"></app-add-post>
             </div>
-            <div *ngIf="userPosts; else loader" class="p-2 m-1">
+            <div *ngIf="userPosts" class="p-2 m-1">
                 <app-user-all-posts-list [userPosts]="userPosts"></app-user-all-posts-list>
             </div>
 

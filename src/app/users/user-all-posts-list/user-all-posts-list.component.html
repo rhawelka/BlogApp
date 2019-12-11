@@ -4,7 +4,9 @@
         <p>Post #{{y+1}}</p>
         <h3>{{post.title}}</h3>
         <p style="font-family: Open Sans;">{{post.body}}</p>
-        <a class="btnBlack m-2" routerLink="/posts/{{post.id}}">Read More<i class="fab fa-readme ml-2"></i></a>
+        <div class="d-flex flex-row-reverse">
+            <a class="btnBlack m-2" routerLink="/posts/{{post.id}}">Read More<i class="fab fa-readme ml-2"></i></a>
+        </div>
         <hr>
         <app-comments [postId]="post.id"></app-comments>
       </div>

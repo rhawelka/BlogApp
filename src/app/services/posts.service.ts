@@ -22,11 +22,6 @@ export class PostsService {
     return this._httpClient.get<Post[]>(`${this.postsUrl}posts?user_id=${userId}`, {headers: this.headers}).pipe(map(res=>res['result']));
   }
 
-  // getPostsByUserId(userId: number): Observable<Post[]> {
-  //   return this._httpClient.get<Post[]>('https://gorest.co.in/public-api/posts?user_id='+
-  //   userId +'&_format=json&access-token=Gvea-qrynZqnplQz_WtjyQiaoK8oNk0OjRlt').pipe(map(res=>res['result']));
-  // }
-
   getPosts(): Observable<Post[]> {
     return this._httpClient.get<Post[]>(`${this.postsUrl}posts`,{headers: this.headers}).pipe(map(res=>res['result']));
   }

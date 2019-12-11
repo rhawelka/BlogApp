@@ -1,14 +1,14 @@
-ul {
+.sidebar-content ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.sidebar-post-list {
+.sidebar-content .sidebar-post-list {
   text-align: center;
 }
 
-.sidebar-item-title {
+.sidebar-content .sidebar-item-title {
   margin: 10px 0;
   padding: 16px 32px;
   color: white;
@@ -16,16 +16,16 @@ ul {
   font-family: "Oswald";
 }
 
-.sideber-item-advertise {
+.sidebar-content .sideber-item-advertise {
   height: 25vh;
   border: 5px solid lightgray;
 }
 
-.sidebar-people-item {
+.sidebar-content .sidebar-people-item {
   padding: 5px;
 }
 
-.sidebar-tags-item {
+.sidebar-content .sidebar-tags-item {
   padding: 5px;
   margin: 2px;
   background-color: grey;
@@ -35,23 +35,23 @@ ul {
   font-weight: 300;
 }
 
-.sidebar-tags-item:hover {
+.sidebar-content .sidebar-tags-item:hover {
   cursor: pointer;
   background-color: black;
 }
 
-.sidebar-item-follow-icons {
+.sidebar-content .sidebar-item-follow-icons {
   line-height: 40px;
   font-size: 40px;
   color: black;
   padding: 10px;
 }
 
-.sidebar-item-follow-icons i {
+.sidebar-content .sidebar-item-follow-icons i {
   margin-right: 8px;
 }
 
-.sidebar-item-follow-icons i:hover {
+.sidebar-content .sidebar-item-follow-icons i:hover {
   cursor: pointer;
   font-size: 38px;
 }

@@ -38,7 +38,9 @@
                                 </div>
                                 <div class="col"></div>
                             </div>
-                            <app-comments [postId]="post.id" class="m-2 p-5"></app-comments>
+
+
+
                             <hr class="m-3">
                                 <div class="d-flex justify-content-around">
                                     <div class="border border-dark m-2 p-4" style="width:400px; height: 300px;">Advertise</div>
@@ -51,6 +53,10 @@
 
                     </div>
                     <app-read-more></app-read-more>
+                    <div class="p-2">
+                        <hr>
+                        <app-comments [postId]="post.id" class="m-2 p-5"></app-comments>
+                    </div>
                 </div>
             </div>
 

@@ -31,6 +31,7 @@ import { HomeSidebarComponent } from './home/home-sidebar/home-sidebar.component
 import { UserDataComponent } from './users/user-data/user-data.component';
 import { PostDetailsPageComponent } from './posts/post-details-page/post-details-page.component';
 import { ReadMoreComponent } from './posts/post-details-page/read-more/read-more.component';
+import { AddPostPageComponent } from './posts/add-post-page/add-post-page.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { ReadMoreComponent } from './posts/post-details-page/read-more/read-more
     HomeSidebarComponent,
     UserDataComponent,
     PostDetailsPageComponent,
-    ReadMoreComponent
+    ReadMoreComponent,
+    AddPostPageComponent
   ],
   imports: [
     BrowserModule,
